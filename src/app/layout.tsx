@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+/* Condensed heavy display — closest Google Font substitute for MARKO */
+const display = Bebas_Neue({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  weight: "400",
+  variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
+/* Geometric grotesk fallback; Host Grotesk loads via CSS @import and takes priority */
+const body = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -28,10 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="font-body bg-brisk-dark text-brisk-white antialiased">
-        {children}
-      </body>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="bg-brisk-mist text-brisk-ink antialiased">{children}</body>
     </html>
   );
 }

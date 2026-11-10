@@ -8,7 +8,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="contact" className="bg-brisk-dark py-[120px]">
+    <section id="contact" className="bg-brisk-mist py-[120px]">
       <div
         ref={ref}
         className="mx-auto flex max-w-[720px] flex-col items-center px-6 text-center md:px-10"
@@ -19,17 +19,15 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-brisk-cyan" />
-            <span className="font-display text-xs font-medium tracking-[0.15em] text-brisk-cyan">
-              Contact
-            </span>
-            <span className="h-px w-8 bg-brisk-cyan" />
+            <span className="h-px w-8 bg-brisk-blue" />
+            <span className="section-eyebrow">Contact</span>
+            <span className="h-px w-8 bg-brisk-blue" />
           </div>
 
-          <h2 className="font-display text-3xl font-bold text-brisk-white md:text-4xl">
+          <h2 className="font-display text-4xl tracking-wide text-brisk-ink md:text-5xl">
             Ready to get protected?
           </h2>
-          <p className="mx-auto mt-4 max-w-md font-body text-sm leading-relaxed text-white/60">
+          <p className="mx-auto mt-4 max-w-md font-body text-sm leading-relaxed text-brisk-steel">
             Tell us about your environment. We&apos;ll map the risks and show
             you how BRISK closes them — fast.
           </p>
@@ -37,23 +35,23 @@ export default function Contact() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
               href="mailto:hello@briskcyber.com"
-              className="inline-flex items-center rounded-full bg-brisk-cyan px-7 py-3 font-display text-sm font-semibold text-brisk-dark transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center rounded-full bg-brisk-lime px-7 py-3 font-body text-sm font-semibold text-brisk-ink shadow-soft transition-transform duration-200 hover:scale-[1.03]"
             >
               Email Us
             </a>
             <a
               href="#services"
-              className="inline-flex items-center rounded-full border border-white/30 px-7 py-3 font-display text-sm font-semibold text-brisk-white transition-colors duration-200 hover:border-brisk-cyan hover:text-brisk-cyan"
+              className="inline-flex items-center rounded-full border border-white/80 bg-white/60 px-7 py-3 font-body text-sm font-semibold text-brisk-ink shadow-soft backdrop-blur-md transition-colors duration-200 hover:border-brisk-blue/40 hover:text-brisk-blue"
             >
               View Solutions
             </a>
           </div>
 
-          <div className="mt-12 space-y-3 font-body text-sm text-white/55">
+          <div className="mt-12 space-y-3 font-body text-sm text-brisk-steel">
             <p>
               <a
                 href="mailto:hello@briskcyber.com"
-                className="transition-colors hover:text-brisk-cyan"
+                className="transition-colors hover:text-brisk-blue"
               >
                 hello@briskcyber.com
               </a>
@@ -63,7 +61,7 @@ export default function Contact() {
                 href="https://linkedin.com/company/brisk-cyber"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-brisk-cyan"
+                className="transition-colors hover:text-brisk-blue"
               >
                 linkedin.com/company/brisk-cyber
               </a>
@@ -73,7 +71,7 @@ export default function Contact() {
                 href="https://github.com/shayanahmed1709/Briskwebsite"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-brisk-cyan"
+                className="transition-colors hover:text-brisk-blue"
               >
                 github.com/shayanahmed1709/Briskwebsite
               </a>
@@ -81,8 +79,8 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        <footer className="mt-20 w-full border-t border-white/10 pt-8">
-          <p className="font-display text-xs tracking-wide text-white/35">
+        <footer className="mt-20 w-full border-t border-brisk-ink/10 pt-8">
+          <p className="font-body text-xs tracking-wide text-brisk-steel/70">
             © 2026 BRISK. All rights reserved.
           </p>
         </footer>
