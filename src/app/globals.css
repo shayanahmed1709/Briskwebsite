@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +10,11 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #050810;
-  color: #e8edf5;
+  background-color: #f5f9fc;
+  color: #0b1b33;
+  font-family: "Host Grotesk", var(--font-body), system-ui, sans-serif;
 }
 
-/* Hide scrollbar for industries horizontal scroll */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -20,4 +22,15 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-[28px] border border-white/80 shadow-glass backdrop-blur-[20px];
+    background: rgba(255, 255, 255, 0.52);
+  }
+
+  .section-eyebrow {
+    @apply font-body text-xs font-medium tracking-[0.16em] text-brisk-blue;
+  }
 }
