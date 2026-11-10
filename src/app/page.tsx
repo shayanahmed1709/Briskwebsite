@@ -9,15 +9,31 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Nav />
-      <Hero />
-      <About />
-      <Services />
-      <Industries />
-      <ThreatIntel />
-      <CaseStudies />
-      <Contact />
-    </main>
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="services">
+          <Services />
+        </section>
+        <section id="industries">
+          <Industries />
+        </section>
+        <section id="threat-intelligence">
+          <ThreatIntel />
+        </section>
+        <section id="case-studies">
+          <CaseStudies />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+    </>
   );
 }

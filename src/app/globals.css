@@ -1,18 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  background: #050810;
+  color: #e8edf5;
+  font-family: Inter, system-ui, sans-serif;
   overflow-x: hidden;
-  background-color: #f5f9fc;
-  color: #0b1b33;
-  font-family: "Host Grotesk", var(--font-body), system-ui, sans-serif;
 }
 
 .hide-scrollbar {
@@ -22,15 +27,4 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
-}
-
-@layer components {
-  .glass-card {
-    @apply rounded-[28px] border border-white/80 shadow-glass backdrop-blur-[20px];
-    background: rgba(255, 255, 255, 0.52);
-  }
-
-  .section-eyebrow {
-    @apply font-body text-xs font-medium tracking-[0.16em] text-brisk-blue;
-  }
 }

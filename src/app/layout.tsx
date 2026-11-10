@@ -1,22 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
-
-/* Condensed heavy display — closest Google Font substitute for MARKO */
-const display = Bebas_Neue({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-display",
-  display: "swap",
-});
-
-/* Geometric grotesk fallback; Host Grotesk loads via CSS @import and takes priority */
-const body = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "BRISK — Cybersecurity Reimagined",
@@ -30,8 +13,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-brisk-mist text-brisk-ink antialiased">{children}</body>
+    <html lang="en">
+      <head>
+        {/* Google Fonts — Space Grotesk (headings) + Inter (body/nav/labels).
+            Space Grotesk GF max weight is 700 (800/900 not published).
+            Loaded via link (next/font google fetch unavailable in this env). */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-body bg-brisk-dark text-brisk-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }

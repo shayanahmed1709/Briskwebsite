@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const links = [
-  { label: "home", href: "#" },
-  { label: "about", href: "#about" },
-  { label: "services", href: "#services" },
-  { label: "industries", href: "#industries" },
-  { label: "threat intelligence", href: "#threat-intelligence" },
-  { label: "contact", href: "#contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Industries", href: "#industries" },
+  { label: "Threat Intelligence", href: "#threat-intelligence" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Nav() {
@@ -22,58 +22,59 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTop = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 w-full"
       animate={{
         backgroundColor: scrolled
-          ? "rgba(255,255,255,0.78)"
-          : "rgba(255,255,255,0)",
+          ? "rgba(5,8,16,0.90)"
+          : "rgba(5,8,16,0)",
       }}
       transition={{ duration: 0.3 }}
       style={{
-        backdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-        WebkitBackdropFilter: scrolled ? "blur(18px)" : "blur(0px)",
-        boxShadow: scrolled ? "0 10px 32px rgba(11,27,51,0.06)" : "none",
+        backdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
+        WebkitBackdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
+        borderBottom: scrolled
+          ? "1px solid rgba(255,255,255,0.06)"
+          : "1px solid transparent",
       }}
     >
-      <nav className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between px-6 md:px-10">
+      <nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 md:px-10">
         <a
-          href="#"
-          onClick={scrollTop}
-          className="relative z-10 flex items-center gap-2.5 font-display text-[28px] leading-none tracking-[0.04em] text-brisk-ink"
+          href="#home"
+          className="flex items-center gap-2 font-display text-lg font-bold tracking-tight text-brisk-cyan"
+          style={{ fontWeight: 800 }}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/80 bg-white/55 shadow-soft backdrop-blur-md">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path
-                d="M12 2L3.5 6.5V12C3.5 17.25 7.4 21.74 12 23C16.6 21.74 20.5 17.25 20.5 12V6.5L12 2Z"
-                stroke="#2F6BFF"
-                strokeWidth="1.6"
-                fill="rgba(47,107,255,0.12)"
-              />
-              <path
-                d="M12 7.5V13M12 16.2V16.8"
-                stroke="#2F6BFF"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+          >
+            <path
+              d="M12 2L3.5 6.5V12C3.5 17.25 7.4 21.74 12 23C16.6 21.74 20.5 17.25 20.5 12V6.5L12 2Z"
+              stroke="#00C2FF"
+              strokeWidth="1.5"
+              fill="rgba(0,194,255,0.08)"
+            />
+            <path
+              d="M12 7V13M12 16.5V17"
+              stroke="#00C2FF"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
           BRISK
         </a>
 
-        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
           {links.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
-                onClick={link.href === "#" ? scrollTop : undefined}
-                className="font-body text-[13px] font-medium tracking-[0.01em] text-brisk-steel/90 transition-colors duration-200 hover:text-brisk-ink"
+                className="font-body text-[13px] font-normal text-brisk-white/70 transition-colors duration-200 hover:text-brisk-cyan"
               >
                 {link.label}
               </a>
@@ -81,16 +82,16 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="relative z-10 flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <a
             href="#case-studies"
-            className="hidden rounded-full border border-white/80 bg-white/55 px-5 py-2.5 font-body text-sm font-semibold text-brisk-ink shadow-soft backdrop-blur-md transition-colors duration-200 hover:bg-white/80 sm:inline-flex"
+            className="hidden rounded-full border border-white/25 bg-transparent px-5 py-2 font-body text-sm font-medium text-brisk-white/80 transition-all duration-200 hover:border-brisk-cyan hover:text-brisk-cyan sm:inline-flex"
           >
             Resources
           </a>
           <a
             href="#contact"
-            className="rounded-full bg-brisk-lime px-5 py-2.5 font-body text-sm font-semibold text-brisk-ink shadow-soft transition-transform duration-200 hover:scale-[1.03]"
+            className="rounded-full bg-brisk-cyan px-5 py-2 font-body text-sm font-semibold text-brisk-dark transition-all duration-200 hover:brightness-110"
           >
             Get Protected
           </a>

@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const stroke = "#2F6BFF";
+const stroke = "#00C2FF";
 
 const services = [
   {
@@ -73,47 +73,49 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="services" className="bg-brisk-mist py-[120px]">
+    <div className="bg-brisk-dark py-[120px]">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <div className="mb-14 max-w-xl">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-brisk-blue" />
-            <span className="section-eyebrow">Services</span>
+            <span className="h-px w-8 bg-brisk-cyan" />
+            <span className="font-display text-xs tracking-[0.15em] text-brisk-cyan" style={{ fontWeight: 500 }}>
+              Services
+            </span>
           </div>
-          <h2 className="font-display text-4xl tracking-wide text-brisk-ink md:text-5xl">
+          <h2 className="font-display text-3xl text-brisk-white md:text-4xl" style={{ fontWeight: 700 }}>
             Defense that covers every layer.
           </h2>
-          <p className="mt-4 font-body text-sm leading-relaxed text-brisk-steel">
+          <p className="mt-4 font-body text-sm leading-relaxed text-white/60">
             Six core offerings engineered to detect, contain, and recover —
             without slowing the business down.
           </p>
         </div>
 
-        <div
-          ref={ref}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <div ref={ref} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.article
               key={service.title}
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="glass-card p-7 transition-transform duration-200 hover:-translate-y-1"
+              className="rounded-2xl border border-white/10 p-7 transition-colors duration-200 hover:border-brisk-cyan/40"
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+              }}
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brisk-blue/10">
-                {service.icon}
-              </div>
-              <h3 className="font-body text-lg font-semibold text-brisk-ink">
+              <div className="mb-5">{service.icon}</div>
+              <h3 className="font-display text-lg text-brisk-white" style={{ fontWeight: 600 }}>
                 {service.title}
               </h3>
-              <p className="mt-3 font-body text-sm leading-relaxed text-brisk-steel">
+              <p className="mt-3 font-body text-sm leading-relaxed text-white/55">
                 {service.body}
               </p>
             </motion.article>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
