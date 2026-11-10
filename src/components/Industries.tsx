@@ -19,7 +19,7 @@ export default function Industries() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div className="bg-brisk-navy py-[120px]">
+    <div className="bg-brisk-sky py-[120px]">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <motion.div
           ref={ref}
@@ -29,14 +29,14 @@ export default function Industries() {
         >
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-brisk-cyan" />
-            <span className="font-display text-xs tracking-[0.15em] text-brisk-cyan" style={{ fontWeight: 500 }}>
+            <span className="font-body text-xs font-medium tracking-[0.15em] text-brisk-cyan">
               Industries
             </span>
           </div>
-          <h2 className="font-display text-3xl text-brisk-white md:text-4xl" style={{ fontWeight: 700 }}>
+          <h2 className="font-display text-3xl text-brisk-ink md:text-4xl" style={{ fontWeight: 700 }}>
             Built for regulated, high-stakes environments.
           </h2>
-          <p className="mt-4 max-w-lg font-body text-sm leading-relaxed text-white/60">
+          <p className="mt-4 max-w-lg font-body text-sm leading-relaxed text-brisk-steel">
             From capital markets to clinical systems — BRISK adapts controls to
             the risk profile of your sector.
           </p>
@@ -49,13 +49,7 @@ export default function Industries() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
-              className="shrink-0 rounded-full border border-white/15 px-7 py-3 font-display text-sm text-brisk-white/80 transition-colors duration-200 hover:border-brisk-cyan hover:text-brisk-cyan"
-              style={{
-                fontWeight: 500,
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-              }}
+              className="shrink-0 rounded-full border border-white/80 bg-white/55 px-7 py-3 font-body text-sm font-medium text-brisk-ink shadow-soft backdrop-blur-md transition-colors duration-200 hover:border-brisk-cyan hover:text-brisk-cyan"
             >
               {name}
             </motion.div>

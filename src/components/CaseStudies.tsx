@@ -32,16 +32,16 @@ export default function CaseStudies() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div className="bg-brisk-navy py-[120px]">
+    <div className="bg-brisk-sky py-[120px]">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <div className="mb-14 max-w-xl">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-brisk-cyan" />
-            <span className="font-display text-xs tracking-[0.15em] text-brisk-cyan" style={{ fontWeight: 500 }}>
+            <span className="font-body text-xs font-medium tracking-[0.15em] text-brisk-cyan">
               Case Studies
             </span>
           </div>
-          <h2 className="font-display text-3xl text-brisk-white md:text-4xl" style={{ fontWeight: 700 }}>
+          <h2 className="font-display text-3xl text-brisk-ink md:text-4xl" style={{ fontWeight: 700 }}>
             Outcomes that speak in metrics.
           </h2>
         </div>
@@ -53,28 +53,28 @@ export default function CaseStudies() {
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="flex flex-col rounded-2xl border border-white/10 p-7"
+              className="flex flex-col rounded-[28px] border border-white/80 p-7 shadow-soft"
               style={{
-                background: "rgba(255,255,255,0.06)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
+                background: "rgba(255,255,255,0.55)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
               }}
             >
-              <span className="mb-4 inline-flex w-fit rounded-full border border-brisk-cyan/40 px-3 py-1 font-body text-[11px] font-medium tracking-wide text-brisk-cyan">
+              <span className="mb-4 inline-flex w-fit rounded-full border border-brisk-cyan/30 bg-brisk-cyan/5 px-3 py-1 font-body text-[11px] font-medium tracking-wide text-brisk-cyan">
                 {c.tag}
               </span>
-              <h3 className="font-display text-lg text-brisk-white" style={{ fontWeight: 600 }}>
+              <h3 className="font-display text-lg text-brisk-ink" style={{ fontWeight: 600 }}>
                 {c.title}
               </h3>
               <div className="mt-5">
-                <p className="font-display text-4xl text-brisk-cyan" style={{ fontWeight: 800 }}>
+                <p className="font-display text-4xl text-brisk-cyan" style={{ fontWeight: 700 }}>
                   {c.metric}
                 </p>
-                <p className="mt-1 font-body text-xs text-white/50">
+                <p className="mt-1 font-body text-xs text-brisk-steel">
                   {c.metricLabel}
                 </p>
               </div>
-              <p className="mt-5 font-body text-sm leading-relaxed text-white/55">
+              <p className="mt-5 font-body text-sm leading-relaxed text-brisk-steel">
                 {c.body}
               </p>
             </motion.article>

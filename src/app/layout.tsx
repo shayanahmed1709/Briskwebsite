@@ -15,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Fonts — Space Grotesk (headings) + Inter (body/nav/labels).
-            Space Grotesk GF max weight is 700 (800/900 not published).
-            Loaded via link (next/font google fetch unavailable in this env). */}
+        {/* Google Fonts — Space Grotesk (headings) + Inter (body/nav/labels) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -30,7 +28,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body bg-brisk-dark text-brisk-white antialiased">
+      <body className="font-body bg-brisk-mist text-brisk-ink antialiased">
         {children}
       </body>
     </html>
